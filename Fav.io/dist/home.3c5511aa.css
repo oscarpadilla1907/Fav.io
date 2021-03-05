@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body{
+    background-color: black;
+    background-image: url(/backhome1.2d5092ef.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#active{
+    color: rgb(255, 72, 0);
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 0.733);
+}
+
+.navbar .container-fluid .collapse ul li a{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    transition: all 0.4s;
+}
+
+.navbar .container-fluid .collapse ul li a:hover{
+    transform: scale(1.1, 1.1);
+}
+
+#icon{
+    width: 40px;
+}
+
+#h1{
+    color: blanchedalmond;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#home{
+    margin-top: 150px;
+}
+
+#h2{
+    color: blanchedalmond;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.espan{
+    color: rgb(255, 94, 0);
+}
+
+.play{
+    margin-top: 30px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.733);
+    color: white;
+    text-align: center;
+  }
+
+.btn{
+    background-color: rgba(255, 81, 0, 0.938);
+    color: rgb(255, 255, 255);
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    transform: scale(1.1, 1.1);
+}
+
+/*# sourceMappingURL=/home.3c5511aa.css.map */

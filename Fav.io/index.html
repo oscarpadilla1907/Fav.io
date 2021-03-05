@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="shortcut icon" href="/static/img/icon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+</head>
+
+<body>
+    <!--   <div id="root"></div>
+        <script src="/index.jsx"></script> -->
+    <div class="rpg">
+        <h1 class="notetask" align="center">Fav</h1>
+        <h1 class="notetask2" align="center">.io</h1>
+
+
+    </div>
+    <div class="modal-dialog text-center">
+        <div class="col-sn-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img class="img" src="/static/img/icon.png">
+                </div>
+                <form class="col-12" id="cuadro">
+                    <div class="form-group" id="email">
+                        <input class="form-control" type="text" placeholder="Correo electronico" id="correo" />
+                    </div>
+
+                    <div class="form-group" id="pass">
+                        <input class="form-control" type="password" placeholder="Contraseña" id="passw" />
+                    </div>
+
+                    <a><button type="button" class="btn btn-danger" onclick="verificar()"><i
+                                class="fas fa-play"></i> Iniciar sesion</button></a>
+                </form>
+                <div class="col-12 forgot">
+                    <a href="register.html">¿No tienes cuenta? Registrate.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const URL = 'https://fierce-hollows-60824.herokuapp.com/'
+
+
+        function verificar() {
+            let mail = document.getElementById('correo').value;
+            let pass = document.getElementById('passw').value;
+            postRequest(mail, pass);
+        }
+
+
+        function postRequest(email, pass) {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    identifier: email,
+                    password: pass
+                }),
+            };
+            return fetch(URL+'auth/local', options)
+                .then(response => {
+                    if (response.status !== 200) {
+                        alert('Introduce bien tus credenciales');
+                    } else {
+                        response.json()
+                            .then(data => {
+                                alert('Te has logueado correctamente');
+                                window.location.href="home.html";
+                            })
+                            .catch(error => {
+                                alert('Introduce bien tus credenciales');
+                            })
+                    }
+                })
+                .catch(error => {
+                    alert('Introduce bien tus credenciales');
+                });
+        }
+
+    </script>
+</body>
+
+</html>
